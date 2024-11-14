@@ -15,15 +15,11 @@ def insert_into_table(table, block: int, word: int, tag: str, num_words: int, ad
     for word_index in range(word+1, num_words):
         table.iloc[block, word_index] = int_to_hex(int_adress + i, num_bits)
         i+=4
-        print(f"upper for address{address}, i={i}")
-    print("done1")
     # loop through the lower bound of block, bits[0:word]
     i = word * 4 * -1
     for word_index in range(0, word):
         table.iloc[block, word_index] = int_to_hex(int_adress + i, num_bits)
         i+=4     
-        print(f"lower for address{address}, i={i}")
-    print("done2")
 
     # insert tag
     table.iloc[block, num_words] = tag
