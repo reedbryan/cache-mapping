@@ -35,19 +35,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
-
-
-''' Old:
-# instantiate addresses
-addresses: tuple = ('03C', 'FF4', '050', '070', '078', '0F0', 'FF4', '03C', '070', '078')
-#addresses: tuple = ('888', '100', '080', '218', '194', '2F4', '10C', '100', '094', '088')
-#addresses: tuple = ('80', '48', '44', '20', '00', '40', '48', 'C0', '2C', '88')
-
-# main process - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-print(f"Miss rate: {direct_mapping(2, 8, addresses)}/10")
-print(f"Miss rate: {set_associative_mapping(2, 8, addresses, 2)}/10")
-print(f"Miss rate: {fully_associative_mapping(2, 8, addresses)}/10")
-'''
