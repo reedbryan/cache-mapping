@@ -47,10 +47,61 @@ python main.py -a <addresses> -b <num_blocks> -w <num_words> -m <method> [-x <wa
 ### Examples
 ```bash
 python main.py -a 03C FF4 050 070 078 0F0 FF4 03C 070 078 -b 8 -w 2 -m direct
+
+Ouput:
+
+Direct Mapping on addresses:
+['03C', 'FF4', '050', '070', '078', '0F0', 'FF4', '03C', '070', '078']
+
+       word0 word1     tag
+block0                    
+block1                    
+block2   050        000001
+block3                    
+block4                    
+block5                    
+block6   070   FF4  000001
+block7   078   03C  000001
+
+Miss rate: 10/10
 ```
 ```bash
-python main.py -a 03C FF4 050 070 078 0F0 FF4 03C 070 078 -b 8 -w 2 -m set_associative -x 2
+python main.py -a 03C FF4 050 070 078 0F0 FF4 03C 070 078 -b 8 -w 4 -m set_associative -x 2
+
+Ouput:
+
+2-way Set Associative Mapping on addresses:
+['03C', 'FF4', '050', '070', '078', '0F0', 'FF4', '03C', '070', '078']
+
+     word0 word1 word2 word3     tag
+set0                                
+set0                                
+set1   050   054   058        000001
+set1                                
+set2                                
+set2                                
+set3   070   074   078   03C  000001
+set3   030   034   038   03C  000000
+
+Miss rate: 8/10
 ```
 ```bash
-python main.py -a 03C FF4 050 070 078 0F0 FF4 03C 070 078 -b 8 -w 2 -m fully_associative
+python main.py -a 03C FF4 050 070 078 0F0 FF4 03C 070 078 -b 8 -w 8 -m fully_associative
+
+Output:
+
+Fully Associative Mapping on addresses:
+['03C', 'FF4', '050', '070', '078', '0F0', 'FF4', '03C', '070', '078']
+
+       word0 word1 word2 word3 word4 word5 word6 word7      tag
+block0   020   024   028   02C   030   034   038   03C  0000001
+block1   FE0   FE4   FE8   FEC   FF0   FF4   FF8        1111111
+block2   040   044   048   04C   050   054   058        0000010
+block3   060   064   068   06C   070   074   078        0000011
+block4   0E0   0E4   0E8   0EC   0F0   0F4   0F8        0000111
+block5                                                         
+block6                                                         
+block7                                                         
+
+Miss rate: 5/10
 ```

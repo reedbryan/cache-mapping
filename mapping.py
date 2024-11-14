@@ -68,7 +68,7 @@ def direct_mapping(num_words: int, num_blocks: int, addresses: List[str]) -> Non
         insert_into_table(table, block, word, bin_tag, num_words, address)
 
     # Display the table
-    print(f"\n\nFinal Table: Direct Mapping on addresses{addresses}\n{table}")
+    print(f"\nDirect Mapping on addresses:\n{addresses}\n{table}\n")
     return misses
 
 # two sets per block
@@ -153,7 +153,7 @@ def set_associative_mapping(num_words: int, num_blocks: int, addresses: List[str
         insert_into_table(table, block_index, word, bin_tag, num_words, address)
         
     # Display the table
-    print(f"\n\nFinal Table: {x_way_set_associative}-way Set Associative Mapping on addresses{addresses}\n{table}")
+    print(f"\n{x_way_set_associative}-way Set Associative Mapping on addresses:\n{addresses}\n{table}\n")
     return misses
 
 
@@ -226,7 +226,7 @@ def fully_associative_mapping(num_words: int, num_blocks: int, addresses: List[s
         insert_into_table(table, block_index, word, bin_tag, num_words, address)
 
     # Display the table
-    print(f"\n\nFinal Table: Fully Associative Mapping on addresses{addresses}\n{table}")
+    print(f"\nFully Associative Mapping on addresses:\n{addresses}\n{table}\n")
     return misses
 
 # number base conversion - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
