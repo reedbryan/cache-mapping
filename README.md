@@ -2,6 +2,8 @@
 
 This Python program visualizes cache mapping using different methods: Direct Mapping, Set-Associative Mapping, and Fully Associative Mapping. Users can specify hexadecimal addresses, the number of blocks and words, and the cache mapping method.
 
+I wrote this program to give myself practice problems in my Microprocessor-Based Systems class so if your taking something similar and were also not given any practice material here you go.
+
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
